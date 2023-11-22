@@ -1,0 +1,22 @@
+<div
+  id="outer-container"
+  class="container d-flex flex-column justify-content-center align-items-center"
+>
+  <div id="image-div" class="d-flex justify-content-center align-items-center">
+    <img src="/assets/two.png" />
+  </div>
+
+  <h3 class="mt-3">Test Two Works!</h3>
+
+  <div class="d-flex mt-3">
+    <button
+      class="btn btn-outline-dark fw-bold me-3"
+      [routerLink]="'/test-one'"
+    >
+      Go to Test One
+    </button>
+    <button class="btn btn-outline-dark fw-bold" [routerLink]="'/home'">
+      Go Home
+    </button>
+  </div>
+</div>
