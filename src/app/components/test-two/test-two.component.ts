@@ -12,6 +12,6 @@ import { OpenGraphService } from '../../open-graph.service';
 })
 export class TestTwoComponent {
   constructor(openGraphService: OpenGraphService) {
-    openGraphService.addMetaTags('test-two');
+    openGraphService.addMetaTags('two');
   }
 }

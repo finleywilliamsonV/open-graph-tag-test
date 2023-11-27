@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
 
-type Location = 'home' | 'test-one' | 'test-two';
+type Location = 'home' | 'one' | 'two';
 
 @Injectable({
   providedIn: 'root',
@@ -18,48 +18,26 @@ export class OpenGraphService {
       name: 'og:description',
       content: 'Testing Open Graph tags',
     });
+    this.meta.updateTag({
+      name: 'og:image',
+      content: `${window.location.origin}/assets/${location}.png`,
+    });
 
     // location-specific tags
-
-    // Home Page
     if (location === 'home') {
-      // title
       this.meta.updateTag({
         name: 'og:title',
         content: 'Home Page',
       });
-      // image
-      this.meta.updateTag({
-        name: 'og:image',
-        content: `${window.location.origin}/assets/home.png`,
-      });
-    }
-
-    // Test One Page
-    else if (location === 'test-one') {
-      // title
+    } else if (location === 'one') {
       this.meta.updateTag({
         name: 'og:title',
         content: 'Test One Page',
       });
-      // image
-      this.meta.updateTag({
-        name: 'og:image',
-        content: `${window.location.origin}/assets/${location}.png`,
-      });
-    }
-
-    // Test Two Page
-    else if (location === 'test-two') {
-      // title
+    } else if (location === 'two') {
       this.meta.updateTag({
         name: 'og:title',
         content: 'Test Two Page',
-      });
-      // image
-      this.meta.updateTag({
-        name: 'og:image',
-        content: `${window.location.origin}/assets/two.png`,
       });
     }
   }
